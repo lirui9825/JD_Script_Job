@@ -23,7 +23,7 @@ jobs:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_PASSWORD }}
       #     dockerfile: docker/Dockerfile
-      #     repository: akyakya/jd_scripts
+      #     repository: akyakya/JD_Script_Job
       #     tag_with_ref: true
 
       - id: repo_name
@@ -39,5 +39,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           dockerfile: docker/Dockerfile
           registry: docker.pkg.github.com
-          repository: ${{ steps.repo_name.outputs.lowercase }}/jd_scripts
+          repository: ${{ steps.repo_name.outputs.lowercase }}/JD_Script_Job
           tag_with_ref: true

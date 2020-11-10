@@ -31,12 +31,12 @@
    ],
    "exporting" : false,
    "id" : "3a2f6f27c23f93bc104585c22569c760cc9ce82df09cdb41d53b491fe1d0341c",
-   "image" : "akyakya/jd_scripts",
+   "image" : "akyakya/JD_Script_Job",
    "is_ddsm" : false,
    "is_package" : false,
    "links" : [],
    "memory_limit" : 0,
-   "name" : "jd_scripts",
+   "name" : "JD_Script_Job",
    "network" : [
       {
          "driver" : "bridge",
@@ -52,12 +52,12 @@
    "use_host_network" : false,
    "volume_bindings" : [
       {
-         "host_volume_file" : "/docker/jd_scripts/my_crontab_list.sh",
+         "host_volume_file" : "/docker/JD_Script_Job/my_crontab_list.sh",
          "mount_point" : "/scripts/docker/my_crontab_list.sh",
          "type" : "rw"
       },
       {
-         "host_volume_file" : "/docker/jd_scripts/logs",
+         "host_volume_file" : "/docker/JD_Script_Job/logs",
          "mount_point" : "/scripts/logs",
          "type" : "rw"
       }
