@@ -790,6 +790,7 @@ function showMsg() {
   }
 }
 function TotalBean() {
+  console.log(`TotalBean`)
   return new Promise(async resolve => {
     const options = {
       "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
@@ -812,6 +813,7 @@ function TotalBean() {
         } else {
           if (data) {
             data = JSON.parse(data);
+                        console.log(`TotalBean:`,data)
             if (data['retcode'] === 13) {
               $.isLogin = false; //cookie过期
               return
