@@ -17,7 +17,6 @@ Combine from Zero-S1/JD_tools(https://github.com/Zero-S1/JD_tools)
 // cron "15 */2 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_joy.js,tag=京东宠汪汪
 // Surge
 // 京东宠汪汪 = type=cron,cronexp="15 */2 * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_joy.js
-console.log('\njd_joy.js')
 const $ = new Env('宠汪汪');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -49,6 +48,7 @@ let jdNotify = true;//是否开启静默运行，默认true开启
 const JD_API_HOST = 'https://jdjoy.jd.com/common/pet'
 const weAppUrl = 'https://jdjoy.jd.com/common/pet';
 !(async () => {
+  console.log(`\njd_joy.js\n`)
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
     return;
