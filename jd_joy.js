@@ -84,6 +84,7 @@ const weAppUrl = 'https://jdjoy.jd.com/common/pet';
       $.done();
     })
 async function jdJoy() {
+  console.log('进入jdJoy')
   await getPetTaskConfig();
   if ($.getPetTaskConfigRes.success) {
     if ($.isNode()) {
@@ -574,7 +575,7 @@ function feedPets(feedNum) {
   })
 }
 function getPetTaskConfig() {
-  console.log('\n执行: getPetTaskConfig ‼️‼️')
+  console.log('进入getPetTaskConfig')
   return new Promise(resolve => {
     const url = `${weAppUrl}/getPetTaskConfig?reqSource=weapp`;
     const host = `draw.jdfcloud.com`;
