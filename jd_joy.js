@@ -54,6 +54,7 @@ const weAppUrl = 'https://jdjoy.jd.com/common/pet';
   }
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
+      console.log(`\n${i}`)
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
@@ -84,7 +85,7 @@ const weAppUrl = 'https://jdjoy.jd.com/common/pet';
       $.done();
     })
 async function jdJoy() {
-  console.log('进入jdJoy')
+  console.log('\n进入jdJoy')
   await getPetTaskConfig();
   if ($.getPetTaskConfigRes.success) {
     if ($.isNode()) {
