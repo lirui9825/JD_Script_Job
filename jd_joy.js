@@ -574,6 +574,7 @@ function feedPets(feedNum) {
   })
 }
 function getPetTaskConfig() {
+  console.log('\n执行: getPetTaskConfig ‼️‼️')
   return new Promise(resolve => {
     const url = `${weAppUrl}/getPetTaskConfig?reqSource=weapp`;
     const host = `draw.jdfcloud.com`;
