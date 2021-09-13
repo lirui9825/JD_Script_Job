@@ -174,6 +174,7 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
+            console.log(data)
             $.nickName = data['base'].nickname;
           } else {
             console.log(`京东服务器返回空数据`)
