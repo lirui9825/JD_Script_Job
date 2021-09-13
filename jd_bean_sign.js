@@ -145,22 +145,17 @@ async function deleteFile(path) {
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
-      // "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
-      // "headers": {
-      //   "Accept": "application/json,text/plain, */*",
-      //   "Content-Type": "application/x-www-form-urlencoded",
-      //   "Accept-Encoding": "gzip, deflate, br",
-      //   "Accept-Language": "zh-cn",
-      //   "Connection": "keep-alive",
-      //   "Cookie": cookie,
-      //   "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-      //   "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-      // }
-      url: 'https://api.m.jd.com/client.action',
-      headers: {
-        Cookie: cookie
-      },
-      body: 'functionId=signBeanIndex&appid=ld'
+      "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
+      "headers": {
+        "Accept": "application/json,text/plain, */*",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-cn",
+        "Connection": "keep-alive",
+        "Cookie": cookie,
+        "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+      }
     }
     $.post(options, (err, resp, data) => {
       try {
@@ -174,8 +169,8 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            console.log(data)
-            // $.nickName = data['base'].nickname;
+            // console.log(data)
+            $.nickName = data['base'].nickname;
           } else {
             console.log(`京东服务器返回空数据`)
           }
