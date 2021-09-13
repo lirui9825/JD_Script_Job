@@ -182,6 +182,7 @@ function TotalBean() {
       } catch (e) {
         $.logErr(e, resp)
       } finally {
+        console.log(`京东服务器返回数据${data}`)
         resolve();
       }
     })
