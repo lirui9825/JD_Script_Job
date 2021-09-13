@@ -117,7 +117,8 @@ async function downFile () {
 
 async function changeFile (content) {
   console.log(`开始替换变量`)
-  let newContent = content.replace(/var Key = ''/, `var Key = '${cookie}'`);
+  console.log(cookie)
+  let newContent = content.replace(/var Key = ''/, `var OtherKey  = '${cookie}'`);
   if (process.env.JD_BEAN_STOP && process.env.JD_BEAN_STOP !== '0') {
     newContent = newContent.replace(/var stop = 0/, `var stop = ${process.env.JD_BEAN_STOP * 1}`);
   }
