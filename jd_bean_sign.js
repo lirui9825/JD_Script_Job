@@ -20,6 +20,7 @@ let cookiesArr = [], cookie = '';
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
+    console.log(item,jdCookieNode[item])
     cookiesArr.push(jdCookieNode[item])
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
@@ -117,8 +118,8 @@ async function downFile () {
 
 async function changeFile (content) {
   console.log(`开始替换变量`)
-  console.log(JSON.stringify(cookiesArr))
-  let newContent = content.replace(/var OtherKey = ''/, `var OtherKey  = '${cookie}'`);
+  let newContent = content.replace(/var OtherKey = ''/, `var OtherKey  = '[{'cookie': '${cookie}'}]'`);
+  console.log(newContent)
   if (process.env.JD_BEAN_STOP && process.env.JD_BEAN_STOP !== '0') {
     newContent = newContent.replace(/var stop = 0/, `var stop = ${process.env.JD_BEAN_STOP * 1}`);
   }
